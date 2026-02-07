@@ -30,7 +30,7 @@ export default function App() {
             }
 
             setMovies(data.results);
-        } catch () {
+        } catch (error) {
             setIsError(true);
             toast.error("An error occurred. Please try again.");
         } finally {
