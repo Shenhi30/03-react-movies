@@ -1,8 +1,6 @@
 import axios from 'axios';
 import type { Movie } from '../types/movie';
 
-const api: string  = (process.env. VITE_TMDB_TOKEN as string)
-
     interface MovieSearchResponse {
         results: Movie[];
     }
@@ -14,7 +12,7 @@ export default async function fetchMovies (query:string): Promise<Movie[]> {
             },
             headers:{ 
                 accept: 'application/json' ,
-                Authorization: `Bearer ${api}`
+                Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`
             }
         };
 
